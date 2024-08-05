@@ -16,6 +16,7 @@ function and on your participation based on commit history. No commits, no point
 * Any other as you see fit. Feel free to explore Spring
 ## Project Structure ##
 ### Model ###
+#### Michael P ####
 Make sure to mark your Models with correct Entity, Table, Id and Lombok annotations. There are a lot of
 moving parts now in our project. You need to make sure all is build, running, and configured correctly to be
 successful.
@@ -24,6 +25,7 @@ successful.
       how you please.
 
 ### Repository ###
+#### Kofi ####
 Extend CrudRepository or MongoRepository and make custom methods as needed.
 
 ### Service Layer ###
@@ -45,6 +47,7 @@ keep quiz up to date. Bonus Have a GUI way to update quiz questions via the font
 
 ## Font End ##
 ### UI ###
+#### Isaiah and Hugo ####
 The way your website acts/looks is up to you. It is expected of you to make this look/feel like a modern
 website. Feel free to use CSS frameworks. Users should be able to navigate thought the website without
 using back button. Website should have (favicon)[https://www.w3schools.com/html/html_favicon.asp].
