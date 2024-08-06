@@ -7,7 +7,7 @@ import jakarta.validation.constraints.NotNull;
 @Entity
 public class Question {
     @Id
-    private int id;
+    private int questionId;
     @NotNull
     private String question;
     private boolean correct;
