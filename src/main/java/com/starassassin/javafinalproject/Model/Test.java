@@ -1,7 +1,6 @@
 package com.starassassin.javafinalproject.Model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 @Getter
