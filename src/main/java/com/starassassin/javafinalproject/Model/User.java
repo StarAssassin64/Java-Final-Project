@@ -13,4 +13,5 @@ public class User {
     private String name;
     @NotNull
     private String email;
+    private int lastScore;
 }
