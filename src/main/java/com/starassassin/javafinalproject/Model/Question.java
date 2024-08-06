@@ -1,21 +1,14 @@
 package com.starassassin.javafinalproject.Model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;
-import lombok.Getter;
-import lombok.Setter;
-import org.hibernate.validator.constraints.UUID;
 
-@Getter
-@Setter
+@Entity
 public class Question {
-    @UUID
+    @Id
     private int id;
     @NotNull
     private String question;
-    @NotNull
-    private String correctAnswer;
-    private String wrongAnswer1;
-    private String wrongAnswer2;
-    private String wrongAnswer3;
     private boolean correct;
 }
