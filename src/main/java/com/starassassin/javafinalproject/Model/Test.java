@@ -9,23 +9,23 @@ import lombok.Setter;
 public class Test {
     @Id
     private int id;
-    @OneToOne
-    @JoinColumn(name = "questionId", nullable = false)
+    @ManyToOne
+    @JoinColumn (name = "questionID", insertable=false, updatable=false)
     private Question question1;
-    @OneToOne
-    @JoinColumn(name = "questionId", nullable = false)
+    @ManyToOne
+    @JoinColumn (name = "questionID", insertable=false, updatable=false)
     private Question question2;
-    @OneToOne
-    @JoinColumn(name = "questionId", nullable = false)
+    @ManyToOne
+    @JoinColumn (name = "questionID", insertable=false, updatable=false)
     private Question question3;
-    @OneToOne
-    @JoinColumn(name = "questionId", nullable = false)
+    @ManyToOne
+    @JoinColumn (name = "questionID", insertable=false, updatable=false)
     private Question question4;
-    @OneToOne
-    @JoinColumn(name = "questionId", nullable = false)
+    @ManyToOne
+    @JoinColumn (name = "questionID", insertable=false, updatable=false)
     private Question question5;
-    @OneToOne
-    @JoinColumn(name = "questionId", nullable = false)
+    @ManyToOne
+    @JoinColumn (name = "questionID", insertable=false, updatable=false)
     private Question question6;
     private int score;
     
