@@ -2,12 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Spring Quiz</title>
-    <link th:href="@{/css/style.css}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="..\static\style.css">
     <link rel="icon" href="..\static\favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Results</a></li>
+            <li><a href="#">Take the Quiz!</a></li>
+        </ul>
+    </nav>
     <div>
         <h1>Spring Quiz</h1>
+        <img src="..\static\Quiz.jpg" alt="Logo" style="width: 200px; height: auto;">
         <form action="#" th:action="@{/login}" method="post">
             <input type="text" name="email" placeholder="Enter your email">
             <button type="submit">Login</button>
