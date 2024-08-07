@@ -18,6 +18,7 @@
         <img src="..\static\Quiz.jpg" alt="Logo" style="width: 200px; height: auto;">
         <form action="#" th:action="@{/login}" method="post">
             <input type="text" name="email" placeholder="Enter your email">
+            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error"></span>
             <button type="submit">Login</button>
         </form>
     </div>
