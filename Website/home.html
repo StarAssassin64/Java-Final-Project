@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Home</title>
-
-    <a href="home.html">home</a>
-    <a href="scores.html">Scores</a>
+    <link rel="stylesheet" href="/static/home.css">
+    <nav>
+        <a class = "nav" href="@{/home}">home</a>
+        <a class = "nav" href="@{/scores}">Scores</a>
+    </nav>
 </head>
 <body>
 
