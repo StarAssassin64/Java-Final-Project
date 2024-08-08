@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Home</title>
+    <link href="/Website/css/home.css" th:href="@{/css/home.css}" rel="stylesheet" />
+    <nav>
+        <a id = "home" href="@{/home}">Home</a>
+        <a id = "scores" href="@{/scores}">Scores</a>
+    </nav>
+</head>
+<body>
+
+<h1>Quiz Home</h1>
+<main id = quizes>
+    <div>
+        <form action="#" th:action="@{/multiTest}" method="post" class="quiz-form">
+            <h2>Multi Test</h2>
+            <img src="/Website/images/multipeChoicePlaceHolder.png" alt="multipeChoicePlaceHolder">
+            <button id="multiTest" type="submit">Start</button>
+        </form>
+    </div>
+    <div>
+        <form action="#" th:action="@{/shortFormTest}" method="post" class="quiz-form">
+            <h2>Short Form</h2>
+            <img src="/Website/images/ShortAnswerPlaceHolder.png" alt="shortAnswerPlaceHolder">
+            <button id="shortFormTest" type="submit">Start</button>
+        </form>
+    </div>
+</main>
+</body>
+</html>
