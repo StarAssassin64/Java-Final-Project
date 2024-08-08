@@ -16,9 +16,9 @@
     <div>
         <h1>Spring Quiz</h1>
         <img src="..\static\Quiz.jpg" alt="Logo" style="width: 200px; height: auto;">
-        <form action="#" th:action="@{/login}" method="post">
-            <input type="text" name="email" placeholder="Enter your email">
-            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error"></span>
+        <form action="#" th:action="@{/}" th:object="${user}" method="post">
+            <input type="text" name="email" th:feild="*{email}" placeholder="Enter your email">
+            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" ></span>
             <button type="submit">Login</button>
         </form>
     </div>

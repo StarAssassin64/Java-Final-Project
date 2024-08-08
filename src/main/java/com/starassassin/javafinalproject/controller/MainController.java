@@ -25,4 +25,9 @@ public class MainController {
         // todo add service
         return "index";
     }
+
+    @GetMapping("/quiz")
+    public String quiz(){
+        return "Quiz";
+    }
 }
