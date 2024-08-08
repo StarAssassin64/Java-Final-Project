@@ -13,7 +13,7 @@ public class MainController {
 
     @GetMapping("/")
     public String logIn(User user){
-        return "login";
+        return "index";
     }
 
     @PostMapping("/")
