@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Home</title>
+    <nav>
+        <li><a id = nav href="/">home</a></li>
+        <li><a id = nav href="/scores.html">Scores</a></li>
+    </nav>
+</head>
+<body>
+
+<h1>Quiz Home</h1>
+<main>
+    <div>
+        <form action="#" th:action="@{/multiTest}" method="post">
+            <h2>Multi Test</h2>
+            <button id="multiTest" type="submit">Start</button>
+        </form>
+    </div>
+    <div>
+        <form action="#" th:action="@{/shortFormTest}" method="post">
+            <h2>Short Form</h2>
+            <button id="shortFormTest" type="submit">Start</button>
+        </form>
+    </div>
+</main>
+</body>
+</html>
