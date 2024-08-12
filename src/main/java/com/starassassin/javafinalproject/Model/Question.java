@@ -11,5 +11,4 @@ public class Question {
     @NotNull
     private String question;
     private boolean correct;
-    private Answer[] answers;
 }

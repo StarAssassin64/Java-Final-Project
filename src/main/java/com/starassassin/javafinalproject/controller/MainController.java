@@ -1,5 +1,6 @@
 package com.starassassin.javafinalproject.controller;
 
+import com.starassassin.javafinalproject.Model.Test;
 import com.starassassin.javafinalproject.Model.User;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
@@ -22,12 +23,26 @@ public class MainController {
             model.addAttribute("errors", result.getAllErrors());
             return "index";
         }
-        // todo add service
         return "index";
     }
 
     @GetMapping("/quiz")
-    public String quiz(){
-        return "Quiz";
+    public String quiz(Test test){
+        return "quiz";
+    }
+
+    @PostMapping("/quiz-submit")
+    public String quizSubmit(){
+        return "quiz-submit";
+    }
+
+    @GetMapping("/home")
+    public String home(){
+        return "home";
+    }
+
+    @GetMapping("/scores")
+    public String scores(){
+        return "scores";
     }
 }
