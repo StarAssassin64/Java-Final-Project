@@ -27,12 +27,31 @@ public class TestServicesImpl implements TestServices {
             throw new EmptyQuestionException();
         } else {
             int randomIndex = (int) (Math.random() * questions.size());
+            while (true) {
+                Question question = questions.get(randomIndex);
+                if (askedQuestions.contains(question)) {
+                    break;
+                }
+                randomIndex = (int) (Math.random() * questions.size());
+            }
+            askedQuestions.add(questions.get(randomIndex));
             return questions.get(randomIndex);
         }
     }
     
     @Override
-    public Test startTest(List<Question> questions) {
-        return null;
+    public Test startTest() throws EmptyQuestionException {
+        ArrayList<Question> questions = askedQuestions;
+        while (askedQuestions.size() <= 6) {
+            questions.add(getRandomQuestion());
+        }
+        Test returnValue = new Test();
+        returnValue.setQuestion1(questions.get(0));
+        returnValue.setQuestion2(questions.get(1));
+        returnValue.setQuestion3(questions.get(2));
+        returnValue.setQuestion4(questions.get(3));
+        returnValue.setQuestion5(questions.get(4));
+        returnValue.setQuestion6(questions.get(5));
+        return returnValue;
     }
 }
