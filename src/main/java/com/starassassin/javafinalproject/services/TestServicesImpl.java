@@ -62,8 +62,8 @@ public class TestServicesImpl implements TestServices {
     @Override
     public int calculateScore(Long userId) {
 
-        User userTests = new User();
-        ArrayList<Question> userQuestions = userTests.get(userTests.getId());
+
+        ArrayList<Question> userQuestions = (ArrayList<Question>) questionRepository.findQuestionByUserId(Math.toIntExact(userId));
         if (userQuestions == null || userQuestions.isEmpty()) {
             return 0;
         }
