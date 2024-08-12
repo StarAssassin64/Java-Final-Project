@@ -5,10 +5,10 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class QuizStartResponse {
+public class TestStartResponse {
     private boolean started;
     private String message;
-    public QuizStartResponse(boolean started, String message) {
+    public TestStartResponse(boolean started, String message) {
         this.started = started;
         this.message = message;
     }

@@ -1,2 +1,4 @@
-package com.starassassin.javafinalproject.services;public class QuestionServicesImpl {
+package com.starassassin.javafinalproject.services;
+
+public class QuestionServicesImpl {
 }
