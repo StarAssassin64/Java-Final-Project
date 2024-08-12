@@ -1,6 +1,7 @@
 package com.starassassin.javafinalproject.services;
 
 import com.starassassin.javafinalproject.Model.Question;
+import com.starassassin.javafinalproject.Model.Test;
 import com.starassassin.javafinalproject.exceptions.EmptyQuestionException;
 import com.starassassin.javafinalproject.repository.QuestionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class TestServicesImpl {
+public class TestServicesImpl implements TestServices {
     public ArrayList<Question> askedQuestions = new ArrayList<Question>();
     private final QuestionRepository questionRepository;
     
@@ -28,5 +29,10 @@ public class TestServicesImpl {
             int randomIndex = (int) (Math.random() * questions.size());
             return questions.get(randomIndex);
         }
+    }
+    
+    @Override
+    public Test startTest(List<Question> questions) {
+        return null;
     }
 }
