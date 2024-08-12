@@ -7,5 +7,5 @@ import java.util.Optional;
 public interface UserServices {
     User createUser(User user);
     boolean getUserLogging(String name);
-    Optional<User> findUserById(long id);
+    User findUserById(long id);
 }

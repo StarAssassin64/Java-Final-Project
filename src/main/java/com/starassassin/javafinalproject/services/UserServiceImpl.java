@@ -2,10 +2,14 @@ package com.starassassin.javafinalproject.services;
 
 import com.starassassin.javafinalproject.Model.User;
 import com.starassassin.javafinalproject.repository.UserRepository;
+import jakarta.persistence.EntityNotFoundException;
+import jakarta.validation.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Service
 public class UserServiceImpl implements UserServices {
@@ -15,6 +19,7 @@ public class UserServiceImpl implements UserServices {
 
     @Override
     public User createUser(User user) {
+        validateUser(user);
         return userRepository.save(user);
     }
 
@@ -24,7 +29,21 @@ public class UserServiceImpl implements UserServices {
     }
 
     @Override
-    public Optional<User> findUserById(long id) {
-        return userRepository.findById(id);
+    public User findUserById(long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("User not found"));
     }
+
+    private void validateUser(User user) throws ConstraintViolationException {
+        String usernameRegex = "^[A-Za-z]\\w{5,29}$";
+        Pattern usernamePattern = Pattern.compile(usernameRegex);
+        Matcher usernameMatcher = usernamePattern.matcher(user.getName());
+        if (!usernameMatcher.matches()) {
+            throw new IllegalArgumentException("Invalid username format");
+        }
+        if (user.getEmail() == null || user.getEmail().trim().isEmpty()) {
+            throw new IllegalArgumentException("Email is required");
+        }
+    }
+
 }
