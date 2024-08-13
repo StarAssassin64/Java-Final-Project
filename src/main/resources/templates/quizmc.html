@@ -7,12 +7,12 @@
 <body>
 <nav>
     <ul>
-        <li><a href="/home">Home</a></li>
-        <li><a href="/scores">Scores</a></li>
-        <li><a href="/quiz">Take A Quiz!</a></li>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="scores.html">Scores</a></li>
+        <li><a href="index.html">Login</a></li>
     </ul>
 </nav>
-    <h1>Spring Quiz</h1>
+    <h1>Spring Quiz Multiple choice</h1>
     <form th:action="@{/submit-quiz}" th:object="${test}" method="post">
 <!--        <div th:each="question, iterStat : ${}">-->
 <!--            <p th:text="${iterStat.index + 1} + '. ' + ${question.questionText}"></p>-->
