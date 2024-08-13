@@ -18,6 +18,10 @@ public class TestServicesImpl implements TestServices {
     @Autowired
     public TestServicesImpl(QuestionRepository questionRepository) {
         this.questionRepository = questionRepository;
+        List<Question> questions = (List<Question>) questionRepository.findAll();
+        if (questions.isEmpty()) {
+            DatabaseConfiguration.SetupDatabase(questionRepository);
+        }
     }
 
     public Question getRandomQuestion() throws EmptyQuestionException {
