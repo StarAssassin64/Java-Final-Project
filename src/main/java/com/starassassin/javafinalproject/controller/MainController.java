@@ -2,6 +2,7 @@ package com.starassassin.javafinalproject.controller;
 
 import com.starassassin.javafinalproject.Model.Test;
 import com.starassassin.javafinalproject.Model.User;
+import com.starassassin.javafinalproject.services.TestServicesImpl;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,14 +27,19 @@ public class MainController {
         return "index";
     }
 
-    @GetMapping("/quiz")
-    public String quiz(Test test){
-        return "quiz";
+    @GetMapping("/multiQuiz")
+    public String multiquiz(Test test, TestServicesImpl services){
+        return "quizmc";
     }
 
     @PostMapping("/quiz-submit")
     public String quizSubmit(){
         return "quiz-submit";
+    }
+
+    @GetMapping("/shortQuiz")
+    public String shortQuiz(Test test, TestServicesImpl services){
+        return "quizsa";
     }
 
     @GetMapping("/home")
