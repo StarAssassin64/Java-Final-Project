@@ -70,7 +70,7 @@ public class TestServicesImpl implements TestServices {
 
     @Override
     public int calculateScore(Long userId) {
-        ArrayList<Question> userQuestions = (ArrayList<Question>) questionRepository.findQuestionByUserId(Math.toIntExact(userId));
+        ArrayList<Question> userQuestions = (ArrayList<Question>) questionRepository.findQuestionByQuestionId(Math.toIntExact(userId));
         if (userQuestions == null || userQuestions.isEmpty()) {
             return 0;
         }
