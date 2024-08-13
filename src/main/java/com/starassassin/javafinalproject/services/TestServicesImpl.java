@@ -39,6 +39,15 @@ public class TestServicesImpl implements TestServices {
     }
 
     @Override
+    public List<Question> getTestQuestions() throws EmptyQuestionException {
+        List<Question> test = new ArrayList<>();
+        for (int i = 0; i < 6; i++) {
+            test.add(getRandomQuestion());
+        }
+        return test;
+    }
+
+    @Override
     public Test startTest() throws EmptyQuestionException {
         ArrayList<Question> questions = askedQuestions;
         while (askedQuestions.size() < 6) {
@@ -61,9 +70,7 @@ public class TestServicesImpl implements TestServices {
 
     @Override
     public int calculateScore(Long userId) {
-
-
-        ArrayList<Question> userQuestions = (ArrayList<Question>) questionRepository.findQuestionByUserId(Math.toIntExact(userId));
+        ArrayList<Question> userQuestions = (ArrayList<Question>) questionRepository.findQuestionByQuestionId(Math.toIntExact(userId));
         if (userQuestions == null || userQuestions.isEmpty()) {
             return 0;
         }
