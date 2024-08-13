@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class DatabaseConfiguration {
     
-    public void SetupDatabase(QuestionRepository questionRepository) {
+    public static void SetupDatabase(QuestionRepository questionRepository) {
         QuestionMultipleChoice question1 = new QuestionMultipleChoice();
         question1.setQuestion("Is Spring Framework Open Source or Closed Source");
         question1.setCorrectAnswer("Open Source");
