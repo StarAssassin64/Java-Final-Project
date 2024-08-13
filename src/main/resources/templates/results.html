@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Quiz Results</title>
+        <link rel="stylesheet" href="/static/css/style.css" th:href="@{/css/style.css}">
+    </head>
+
+    <body>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="scores.html">Scores</a></li>
+                <li><a href="index.html">Login</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <h1>Quiz Results</h1>
+            <p th:if="${score != null}">
+                Your total score is: <span th:text="${score}"></span>
+            </p>
+            <p th:if="${score == null}">
+                Sorry, we couldn't find your test results.
+            </p>
+        </div>
+    </body>
+</html>

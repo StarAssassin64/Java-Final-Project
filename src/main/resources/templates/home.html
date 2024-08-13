@@ -9,15 +9,15 @@
 <body>
 <nav>
     <ul>
-        <li><a href="/home">Home</a></li>
-        <li><a href="/scores">Scores</a></li>
-        <li><a href="/quiz">Take A Quiz!</a></li>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="scores.html">Scores</a></li>
+        <li><a href="index.html">Login</a></li>
     </ul>
 </nav>
 <h1>Quiz Home</h1>
 <main id = quizes>
     <div>
-        <form action="#" th:action="@{/multiTest}" method="post" class="quiz-form">
+        <form action="#" th:action="@{/quizmc.html}" method="post" class="quiz-form">
             <h2>Multi Test</h2>
             <img src="/static/images/multipeChoicePlaceHolder.png" th:src="@{/images/multipeChoicePlaceHolder.png}"
                  alt="multipeChoicePlaceHolder">
@@ -25,7 +25,7 @@
         </form>
     </div>
     <div>
-        <form action="#" th:action="@{/shortFormTest}" method="post" class="quiz-form">
+        <form action="#" th:action="@{/quizsa.html}" method="post" class="quiz-form">
             <h2>Short Form</h2>
             <img src="/static/images/ShortAnswerPlaceHolder.png" th:src="@{/images/ShortAnswerPlaceHolder.png}"
                  alt="shortAnswerPlaceHolder">
