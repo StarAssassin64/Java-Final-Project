@@ -11,4 +11,9 @@ public class Question {
     @NotNull
     private String question;
     private boolean correct;
+    private boolean end;
+
+    public void setTestEnded(boolean b) {
+        end = b;
+    }
 }
