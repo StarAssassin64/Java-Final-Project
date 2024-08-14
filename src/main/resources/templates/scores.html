@@ -4,27 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scores</title>
+    <link href="/src/main/resources/static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
-<body>
 <nav>
     <ul>
-        <li><a th:href="@{/home.html}">Home</a></li>
-        <li><a th:href="@{/scores.html}">Scores</a></li>
-        <li><a th:href="@{/index.html}">Login</a></li>
+        <li><a href="/src/main/resources/templates/home.html" th:href="{@/home}">Home</a></li>
+        <li><a href="/src/main/resources/templates/scores.html" th:href="{@/scores}">Scores</a></li>
     </ul>
 </nav>
 <h1>Top Scores</h1>
 <main>
-    <h2>Top Scores Multi</h2>
-    <ul>
-        <li></li>
-        <li></li>
-    </ul>
-    <h2>Top Scores short form</h2>
-    <ul>
-        <li></li>
-        <li></li>
-    </ul>
+    <div class="top-scores-container">
+        <div class="top-scores-multi">
+            <h2>Top Scores Multiple Choice</h2>
+            <ol>
+                <li>first</li>
+                <li>second</li>
+            </ol>
+        </div>
+        <div class="top-scores-shortform">
+            <h2>Top Scores Short Form</h2>
+            <ol>
+                <li>first</li>
+                <li>second</li>
+            </ol>
+        </div>
+    </div>
 </main>
 </body>
 </html>
