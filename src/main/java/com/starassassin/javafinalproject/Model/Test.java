@@ -3,6 +3,9 @@ package com.starassassin.javafinalproject.Model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -28,6 +31,11 @@ public class Test {
     @ManyToOne
     @JoinColumn (name = "questionID", insertable=false, updatable=false)
     private Question question6;
+
     private int score;
+
+    public List<Question> getQuestions() {
+        return List.of(getQuestion1(), getQuestion2(), getQuestion3(), getQuestion4(), getQuestion5(), getQuestion6());
+    }
     
 }

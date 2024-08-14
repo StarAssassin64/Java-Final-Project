@@ -14,23 +14,16 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Service
-public class UserServiceImpl implements UserServices  {
+public class UserServiceImpl implements UserServices {
     private final UserRepository userRepository;
-    private final QuestionRepository questionRepository;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, QuestionRepository questionRepository) {
+    public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
-        this.questionRepository = questionRepository;
-        List<Question> questions = (List<Question>) questionRepository.findAll();
-        if (questions.isEmpty()) {
-            DatabaseConfiguration.SetupDatabase(questionRepository);
-        }
     }
 
     @Override
     public User createUser(User user) {
-//        validateUser(user);
         return userRepository.save(user);
     }
 
@@ -49,17 +42,4 @@ public class UserServiceImpl implements UserServices  {
     public Boolean emailExists(String email) {
         return userRepository.existsUserByEmail(email);
     }
-
-//    private void validateUser(User user) throws ConstraintViolationException {
-//        String usernameRegex = "^[A-Za-z]\\w{5,29}$";
-//        Pattern usernamePattern = Pattern.compile(usernameRegex);
-//        Matcher usernameMatcher = usernamePattern.matcher(user.getName());
-//        if (!usernameMatcher.matches()) {
-//            throw new IllegalArgumentException("Invalid username format");
-//        }
-//        if (user.getEmail() == null || user.getEmail().trim().isEmpty()) {
-//            throw new IllegalArgumentException("Email is required");
-//        }
-//    }
-
 }
