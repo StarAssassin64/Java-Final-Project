@@ -24,7 +24,8 @@ public class MainController {
             model.addAttribute("errors", result.getAllErrors());
             return "index";
         }
-        return "index";
+
+        return "home";
     }
 
     @GetMapping("/multiQuiz")

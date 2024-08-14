@@ -21,9 +21,9 @@ public class TestServicesImpl implements TestServices {
     public TestServicesImpl(QuestionRepository questionRepository) {
         this.questionRepository = questionRepository;
         List<Question> questions = (List<Question>) questionRepository.findAll();
-        if (questions.isEmpty()) {
-            DatabaseConfiguration.SetupDatabase(questionRepository);
-        }
+//        if (questions.isEmpty()) {
+//            DatabaseConfiguration.SetupDatabase(questionRepository);
+//        }
     }
 
     public Question getRandomQuestion() throws EmptyQuestionException {
