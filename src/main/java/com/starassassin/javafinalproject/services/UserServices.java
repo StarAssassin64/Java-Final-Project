@@ -6,6 +6,7 @@ import java.util.Optional;
 
 public interface UserServices {
     User createUser(User user);
-    boolean getUserLogging(String name);
+//    boolean getUserLogging(String name);
     User findUserById(long id);
+    Boolean emailExists(String email);
 }

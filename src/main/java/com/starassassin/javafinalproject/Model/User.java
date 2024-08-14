@@ -1,6 +1,8 @@
 package com.starassassin.javafinalproject.Model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -15,6 +17,7 @@ import org.hibernate.validator.constraints.UUID;
 public class User {
     
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     @NotBlank
     private String name;

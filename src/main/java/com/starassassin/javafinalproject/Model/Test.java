@@ -8,6 +8,7 @@ import lombok.Setter;
 @Entity
 public class Test {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @ManyToOne
     @JoinColumn (name = "questionID", insertable=false, updatable=false)

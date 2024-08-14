@@ -3,8 +3,10 @@ package com.starassassin.javafinalproject.services;
 import com.starassassin.javafinalproject.Model.Question;
 import com.starassassin.javafinalproject.Model.QuestionMultipleChoice;
 import com.starassassin.javafinalproject.repository.QuestionRepository;
+import org.springframework.context.annotation.Configuration;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DatabaseConfiguration {
     
@@ -45,15 +47,8 @@ public class DatabaseConfiguration {
         question7.setCorrectAnswer("False");
         question7.setWrongAnswer1("True");
         
-        ArrayList<Question> questions = new ArrayList<>();
-        questions.add(question1);
-        questions.add(question2);
-        questions.add(question3);
-        questions.add(question4);
-        questions.add(question5);
-        questions.add(question6);
-        questions.add(question7);
-        
+        List<Question> questions = List.of(question1, question2, question3, question4, question5, question6, question7);
+
         questionRepository.saveAll(questions);
     }
     

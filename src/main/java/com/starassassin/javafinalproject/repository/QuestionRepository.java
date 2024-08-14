@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface QuestionRepository extends CrudRepository<Question, Integer> {
     List<Question> findQuestionByQuestionId(int questionId);
-    User findUserByUserId(int userId);
+//    User findUserByUserId(int userId);
 
 }

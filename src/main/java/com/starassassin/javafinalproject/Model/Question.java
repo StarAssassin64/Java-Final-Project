@@ -1,6 +1,8 @@
 package com.starassassin.javafinalproject.Model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
@@ -11,6 +13,7 @@ import lombok.Setter;
 @Setter
 public class Question {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int questionId;
     @NotNull
     private String question;

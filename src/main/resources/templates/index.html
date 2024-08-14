@@ -9,7 +9,7 @@
 <body>
     <nav>
         <ul>
-            <li><a href="/src/main/resources/templates/index.html" th:href="@{/index}">Login</a></li>
+            <li><a href="/src/main/resources/templates/index.html" th:href="@{/}">Login</a></li>
             <li><a href="/src/main/resources/templates/home.html" th:href="@{/home}">Home</a></li>
             <li><a href="/src/main/resources/templates/scores.html" th:href="@{/scores}">Scores</a></li>
         </ul>
@@ -18,8 +18,17 @@
         <h1>Spring Quiz</h1>
         <img src="..\static\images\Quiz.jpg" th:src="@{/images/Quiz.jpg}" alt="Logo" style="width: 200px; height: auto;">
         <form action="#" th:action="@{/}" th:object="${user}" method="post">
-            <input type="text" name="email" th:feild="*{email}" placeholder="Enter your email">
-            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" ></span>
+            <label>Name:
+                <input type="text" name="name" th:feild="*{name}" placeholder="Enter Your Name">
+                <br>
+                <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" ></span>
+            </label>
+            <label>Email:
+                <input type="text" name="email" th:feild="*{email}" placeholder="Enter your email">
+                <br>
+                <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" ></span>
+            </label>
+            <br>
             <button type="submit">Login</button>
         </form>
     </div>
