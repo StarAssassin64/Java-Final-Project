@@ -3,6 +3,7 @@ package com.starassassin.javafinalproject.services;
 import com.starassassin.javafinalproject.Model.*;
 import com.starassassin.javafinalproject.exceptions.EmptyQuestionException;
 import com.starassassin.javafinalproject.repository.QuestionRepository;
+import com.starassassin.javafinalproject.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ import java.util.List;
 public class TestServicesImpl implements TestServices {
     public ArrayList<Question> askedQuestions = new ArrayList<>();
     private final QuestionRepository questionRepository;
+    private final User user = new User();
 
 
     @Autowired
@@ -68,8 +70,13 @@ public class TestServicesImpl implements TestServices {
     }
 
     @Override
-    public void endTest() throws EmptyQuestionException {
-
+    public void endTest() {
+        int userId = (int) user.getId();
+        List<Question> questions = questionRepository.findQuestionByQuestionId( userId);
+        for (Question question : questions) {
+            question.setTestEnded(true);
+        }
+        questionRepository.saveAll(questions);
     }
 
     @Override
@@ -80,20 +87,30 @@ public class TestServicesImpl implements TestServices {
         }
         int score = 0;
         for (Question question : userQuestions) {
-            if (isAnswerCorrect(question, userId)) {
+            if (isAnswerCorrect(question)) {
                 score++;
             }
         }
         return score;
     }
 
-    private boolean isAnswerCorrect(Question question, Long userId) {
+    private boolean isAnswerCorrect(Question question) {
+        if (question instanceof QuestionMultipleChoice mcQuestion) {
+            return mcQuestion.getCorrectAnswer().equalsIgnoreCase(mcQuestion.getWrongAnswer1())
+                    && mcQuestion.getCorrectAnswer().equalsIgnoreCase(mcQuestion.getWrongAnswer2())
+                    && mcQuestion.getCorrectAnswer().equalsIgnoreCase(mcQuestion.getWrongAnswer3());
+        } else if (question instanceof QuestionShortAnswer saQuestion) {
+            return saQuestion.getAnswer().equalsIgnoreCase(saQuestion.getCorrectAnswer());
+        }
         return false;
     }
 
     @Override
     public void submitAnswer(Long userId, Long questionId) {
-
+//            Question question = questionRepository.findById(questionId);
+//            if (question != null) {
+//                saveUserAnswer(userId, questionId);
+//            }
     }
 }
 
