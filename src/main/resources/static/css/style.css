@@ -1,7 +1,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: tan;
+    background-color: #f1c993;
     text-align: center;
     margin-top: 50px;
 }
@@ -10,7 +10,7 @@ div{
 }
 
 nav {
-    background-color: #333;
+    background-color: #4F7CAC;
 }
 
 nav ul {
@@ -30,15 +30,106 @@ nav ul li a {
     text-align: center;
     padding: 14px 20px;
     text-decoration: none;
+    font-weight: bolder;
 }
 
 nav ul li a:hover {
-    background-color: #575757; 
+    background-color: #2951E0; 
 }
 
 h1 {
     text-align: center;
-    color: #333;
+    color: #ffffff;
     margin-top: 20px;
+    text-shadow: 1px 2px  #d6b9ca;
+    margin-bottom: 20px;
+    font-size: xxx-large;
 }
 
+#scores, #home {
+    font-size: 50px;
+    text-decoration: none;
+    color: #00c3ff;
+    margin: 0 50px;
+    display: flex;
+    align-items: center;
+}
+.quiz-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+h2{
+    color: #ffffff;
+    margin: 20px;
+}
+
+
+#multiTest, #shortFormTest{
+    font-weight: bold;
+    text-decoration: none;
+    color: #463e4e;
+    background-color: #56cf4b;
+    padding: 8px 8px;
+    border-radius: 10px;
+    transition: background-color 0.2s ease, transform 0.3s ease;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#multiTest:hover, #shortFormTest:hover{
+    background-color: #41fd80;
+    transform: scale(1.1);
+}
+#quizes {
+    display: flex;
+    align-items: row;
+    justify-content: center;
+    flex-direction: row;
+}
+img{
+    width: 50%;
+    height: auto;
+    border-bottom: 7px solid #4F7CAC;
+    border-top: 7px solid #4F7CAC;
+    border-left: 7px solid #ffffff;
+    border-right: 7px solid #ffffff;
+}
+.topMulti, .topSortForm{
+    display: flex;
+    align-items: row;
+    flex-direction: row;
+}
+.top-scores-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 20px;
+}
+
+.top-scores-multi, .top-scores-shortform {
+    margin: 0 20px;
+    text-align: left; 
+}
+
+
+ol {
+    list-style-position: inside;
+    padding-left: 0;
+    text-align: left; 
+    font-size: 18px;
+    padding-left: 20px;
+}
+
+ol li {
+    margin-bottom: 10px;
+}
