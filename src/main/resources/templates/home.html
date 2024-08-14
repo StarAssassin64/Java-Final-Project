@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Home</title>
-    <link href="./static/css/home.css" th:href="@{/css/style.css}" rel="stylesheet" />
+    <link href="../static/css/home.css" th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
 <body>
 <nav>
     <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="scores.html">Scores</a></li>
-        <li><a href="index.html">Login</a></li>
+        <li><a th:href="@{/home.html}">Home</a></li>
+        <li><a th:href="@{/scores.html}">Scores</a></li>
+        <li><a th:href="@{/index.html}">Login</a></li>
     </ul>
 </nav>
 <h1>Quiz Home</h1>
@@ -19,7 +19,7 @@
     <div>
         <form action="#" th:action="@{/quizmc.html}" method="post" class="quiz-form">
             <h2>Multi Test</h2>
-            <img src="/static/images/multipeChoicePlaceHolder.png" th:src="@{/images/multipeChoicePlaceHolder.png}"
+            <img src="../static/images/multipeChoicePlaceHolder.png" th:src="@{/images/multipeChoicePlaceHolder.png}"
                  alt="multipeChoicePlaceHolder">
             <button id="multiTest" type="submit">Start</button>
         </form>
@@ -27,7 +27,7 @@
     <div>
         <form action="#" th:action="@{/quizsa.html}" method="post" class="quiz-form">
             <h2>Short Form</h2>
-            <img src="/static/images/ShortAnswerPlaceHolder.png" th:src="@{/images/ShortAnswerPlaceHolder.png}"
+            <img src="../static/images/ShortAnswerPlaceHolder.png" th:src="@{/images/ShortAnswerPlaceHolder.png}"
                  alt="shortAnswerPlaceHolder">
             <button id="shortFormTest" type="submit">Start</button>
         </form>

@@ -2,20 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Spring Quiz</title>
-    <link rel="stylesheet" type="text/css" href="..\static\style.css" th:href="@{/css/style.css}">
+    <link rel="stylesheet" type="text/css" href="..\static\css\style.css" th:href="@{/css/style.css}">
     <link rel="icon" href="..\static\favicon.ico"  type="image/x-icon">
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="scores.html">Scores</a></li>
-            <li><a href="index.html">Login</a></li>
+        <li><a th:href="@{/home.html}">Home</a></li>
+        <li><a th:href="@{/scores.html}">Scores</a></li>
+        <li><a th:href="@{/index.html}">Login</a></li>
         </ul>
     </nav>
     <div>
         <h1>Spring Quiz</h1>
-        <img src="..\static\Quiz.jpg" th:src="@{/images/Quiz.jpg}" alt="Logo" style="width: 200px; height: auto;">
+        <img src="..\static\images\Quiz.jpg" th:src="@{/images/Quiz.jpg}" alt="Logo" style="width: 200px; height: auto;">
         <form action="#" th:action="@{/}" th:object="${user}" method="post">
             <input type="text" name="email" th:feild="*{email}" placeholder="Enter your email">
             <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" ></span>
